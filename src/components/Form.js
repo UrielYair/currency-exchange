@@ -1,5 +1,6 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
+import getRates from '../api';
 
 const Form = ({ 
   currencies, setCurrencies,
@@ -30,6 +31,14 @@ const Form = ({
     setFilter(e.target.value);
   }
 
+  const getRatesFromAPI = () => {
+    //api
+    let res = getRates();
+    res.then(response => {
+      setCurrencies(response);
+    })
+  }
+
   return (
     <form>
       <input value={currencyName} onChange= {currencyNameHandler} type="text" className="currency-input" placeholder='currency name'/>
@@ -37,6 +46,10 @@ const Form = ({
     
       <button className="currency-button" type="submit" onClick={submitCurrencyHandler}>
         <i className="fas fa-plus-square"></i>
+      </button>
+
+      <button onClick={getRatesFromAPI} className='currency-button' >
+        <i className="fas fa-history"></i>
       </button>
 
       <div className="select">
