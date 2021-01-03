@@ -3,8 +3,10 @@ import Form from './Form'
 import CurrencyList from './CurrenncyList'
 
 const CurrencyExchangeApp = () => {
-  const [inputText, setInputText] = useState("");
+  const [currencyName, setCurrencyName] = useState("");
+  const [currencyRate, setCurrencyRate] = useState("");
 
+  const [currencies, setCurrencies] = useState([]);
   
   return (
     <div className='App'>
@@ -12,7 +14,14 @@ const CurrencyExchangeApp = () => {
         <h1>Currency Exchange App</h1>
       </header>
     
-      <Form setInputText={setInputText}/>
+      <Form 
+      currencies={currencies} 
+      setCurrencies={setCurrencies} 
+      currencyName={currencyName}
+      currencyRate={currencyRate}
+      setCurrencyName={setCurrencyName}
+      setCurrencyRate={setCurrencyRate}
+      />
       <CurrencyList />
     </div>
 
