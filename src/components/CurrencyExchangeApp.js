@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Form from './Form'
 import CurrencyList from './CurrenncyList'
 
@@ -7,7 +7,24 @@ const CurrencyExchangeApp = () => {
   const [currencyRate, setCurrencyRate] = useState("");
   const [currencies, setCurrencies] = useState([]);
   const [filter, setFilter] = useState("all");
-  
+  const [filteredCurrencies, setFilteredCurrencies] = useState([]);
+
+  useEffect(() => {
+    filterHandler();
+  }, [currencies, filter]);
+
+  const filterHandler = () => {
+    switch (filter) {
+      case 'checked':
+        setFilteredCurrencies(currencies.filter(currency => currency.checked === true));
+        break;
+      case 'unchecked':
+        setFilteredCurrencies(currencies.filter(currency => currency.checked === false));
+        break;
+      default:
+        setFilteredCurrencies(currencies);
+    }
+  }
   
   return (
     <div className='App'>
@@ -24,7 +41,11 @@ const CurrencyExchangeApp = () => {
       setCurrencyRate={setCurrencyRate}
       setFilter={setFilter}
       />
-      <CurrencyList currencies={currencies} setCurrencies={setCurrencies} />
+
+      <CurrencyList 
+      currencies={currencies} 
+      setCurrencies={setCurrencies} 
+      filteredCurrencies={filteredCurrencies}/>
     </div>
 
   );
