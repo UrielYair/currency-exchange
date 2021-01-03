@@ -9,6 +9,7 @@ const CurrencyList = ({ currencies }) => {
                     <CurrencyRate 
                     name={currency.currency_name} 
                     rate={currency.currency_rate} 
+                    key={currency.id}
                     />
                 ))}
             </ul>
