@@ -10,10 +10,7 @@ const CurrencyExchangeApp = () => {
   const [filteredCurrencies, setFilteredCurrencies] = useState([]);
 
   useEffect(() => {
-    filterHandler();
-  }, [currencies, filter]);
-
-  const filterHandler = () => {
+    // filterHandler
     switch (filter) {
       case 'checked':
         setFilteredCurrencies(currencies.filter(currency => currency.checked === true));
@@ -24,7 +21,7 @@ const CurrencyExchangeApp = () => {
       default:
         setFilteredCurrencies(currencies);
     }
-  }
+  }, [currencies, filter]);
   
   return (
     <div className='App'>
