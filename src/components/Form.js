@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Form = () => {
-    return (
+const Form = ({ setInputText }) => {
+  const inputTextHandler = (e) => {
+    setInputText(e.target.value);
+  }
+
+  return (
     <form>
-      <input type="text" className="currency-input" />
+      <input onChange= {inputTextHandler} type="text" className="currency-input" />
       <button className="currency-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>

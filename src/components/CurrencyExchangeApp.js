@@ -1,22 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Form from './Form'
+import CurrencyList from './CurrenncyList'
 
-class CurrencyExchangeApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-    };
-  }
+const CurrencyExchangeApp = () => {
+  const [inputText, setInputText] = useState("");
 
   
+  return (
+    <div className='App'>
+      <header>
+        <h1>Currency Exchange App</h1>
+      </header>
+    
+      <Form setInputText={setInputText}/>
+      <CurrencyList />
+    </div>
 
-  render() {
-    return (
-      <div className='App'>
-        <header>
-          <h1>Currency Exchange App</h1>
-				</header>
-      </div>
-    );
-  }
+  );
 }
+
 export default CurrencyExchangeApp;
