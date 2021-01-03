@@ -10,6 +10,10 @@ const CurrencyExchangeApp = () => {
   const [filteredCurrencies, setFilteredCurrencies] = useState([]);
   
   useEffect(() => {
+    getLocalStorage();  
+  }, []);
+  
+  useEffect(() => {
     filterHandler();
     saveLocalStorage();
   }, [currencies, filter]);
