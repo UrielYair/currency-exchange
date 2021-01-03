@@ -26,7 +26,7 @@ const Form = ({
       setCurrencyRate('');
   }
 
-  const filterHandler = (e) => {
+  const filterSelectHandler = (e) => {
     setFilter(e.target.value);
   }
 
@@ -40,7 +40,7 @@ const Form = ({
       </button>
 
       <div className="select">
-        <select name="currencies" className="filter-currency" onChange={filterHandler}>
+        <select name="currencies" className="filter-currency" onChange={filterSelectHandler}>
           <option value="all">All</option>
           <option value="checked">checked</option>
           <option value="unchecked">unchecked</option>
