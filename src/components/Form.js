@@ -32,7 +32,7 @@ const Form = ({
   }
 
   const getRatesFromAPI = () => {
-    //api
+    setCurrencies([]);
     let res = getRates();
     res.then(response => {
       setCurrencies(response);
