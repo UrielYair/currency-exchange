@@ -1,11 +1,16 @@
 import React from "react";
 import CurrencyRate from "./CurrencyRate";
 
-const CurrencyList = () => {
+const CurrencyList = ({ currencies }) => {
     return (
         <div className="currency-container">
             <ul className="currency-list">
-                <CurrencyRate />
+                {currencies.map(currency => (
+                    <CurrencyRate 
+                    name={currency.currency_name} 
+                    rate={currency.currency_rate} 
+                    />
+                ))}
             </ul>
         </div>
     );

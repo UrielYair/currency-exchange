@@ -22,7 +22,7 @@ const CurrencyExchangeApp = () => {
       setCurrencyName={setCurrencyName}
       setCurrencyRate={setCurrencyRate}
       />
-      <CurrencyList />
+      <CurrencyList currencies={currencies} />
     </div>
 
   );
