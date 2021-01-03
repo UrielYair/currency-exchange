@@ -18,7 +18,7 @@ const Form = ({
       [...currencies, {
         currency_name: currencyName, 
         currency_rate: currencyRate, 
-        deleted: false, 
+        checked: false, 
         id: uuidv4()
       }])
       setCurrencyName('');
