@@ -1,7 +1,7 @@
 import React from "react";
 import CurrencyRate from "./CurrencyRate";
 
-const CurrencyList = ({ currencies }) => {
+const CurrencyList = ({ currencies, setCurrencies }) => {
     return (
         <div className="currency-container">
             <ul className="currency-list">
@@ -10,6 +10,9 @@ const CurrencyList = ({ currencies }) => {
                     name={currency.currency_name} 
                     rate={currency.currency_rate} 
                     key={currency.id}
+                    currency={currency}
+                    currencies={currencies} 
+                    setCurrencies={setCurrencies}
                     />
                 ))}
             </ul>

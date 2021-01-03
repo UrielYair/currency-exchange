@@ -5,7 +5,6 @@ import CurrencyList from './CurrenncyList'
 const CurrencyExchangeApp = () => {
   const [currencyName, setCurrencyName] = useState("");
   const [currencyRate, setCurrencyRate] = useState("");
-
   const [currencies, setCurrencies] = useState([]);
   
   return (
@@ -22,7 +21,7 @@ const CurrencyExchangeApp = () => {
       setCurrencyName={setCurrencyName}
       setCurrencyRate={setCurrencyRate}
       />
-      <CurrencyList currencies={currencies} />
+      <CurrencyList currencies={currencies} setCurrencies={setCurrencies} />
     </div>
 
   );
