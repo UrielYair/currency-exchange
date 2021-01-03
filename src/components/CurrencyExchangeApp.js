@@ -6,6 +6,8 @@ const CurrencyExchangeApp = () => {
   const [currencyName, setCurrencyName] = useState("");
   const [currencyRate, setCurrencyRate] = useState("");
   const [currencies, setCurrencies] = useState([]);
+  const [filter, setFilter] = useState("all");
+  
   
   return (
     <div className='App'>
@@ -20,6 +22,7 @@ const CurrencyExchangeApp = () => {
       currencyRate={currencyRate}
       setCurrencyName={setCurrencyName}
       setCurrencyRate={setCurrencyRate}
+      setFilter={setFilter}
       />
       <CurrencyList currencies={currencies} setCurrencies={setCurrencies} />
     </div>
